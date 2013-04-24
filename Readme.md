@@ -6,7 +6,7 @@ This is a simple example of implementing [Square's OkHttp library](https://githu
 
 ### OkHttp
 
-Step zero is getting OkHttp either as a jar, or pulling down the project and building a jar with maven. When I build this, the jar was not available, so I needed to build it myself. This was quite simple, all you need to do is make sure you have Maven2 installed, and follow the instructions on OkHttp's github page.
+Step zero is getting OkHttp either as a jar, or pulling down the project and building a jar with maven. When I built this, the jar was not available, so I needed to build it myself. This was quite simple, all you need to do is make sure you have Maven2 installed, and follow the instructions on OkHttp's github page.
 
 One thing to note is that you need to be building against the parent project, not just the okhttp dir. Sometimes people package up git repos such that there are actually multiple projects in a single repo, and you only need to use one of the dirs in the project. In this case, you need the parent, it will build the child projects for you. 
 
