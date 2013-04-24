@@ -1,12 +1,12 @@
 package com.feigdev.okhttpexample;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.CharBuffer;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
@@ -41,15 +41,16 @@ public class BackgroundWebRunner extends AsyncTask<Void, Void, String> {
 			InputStream is = connection.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is);
 
-			CharBuffer buf = CharBuffer.allocate(32767);
+			// from StackOverflow: http://stackoverflow.com/a/2549222
+			BufferedReader r = new BufferedReader(isr);
+			StringBuilder total = new StringBuilder();
+			String line;
+			while ((line = r.readLine()) != null) {
+			    total.append(line);
+			}
 
-			// Read the output
-			isr.read(buf);
-			
-			response = buf.toString();
+			response = total.toString();
 			Log.d(TAG,"response: " + response);
-			response = connection.getResponseMessage();
-			Log.d(TAG,"response message: " + response);
 		} catch (MalformedURLException e) {
 			Log.e(TAG,"",e);
 		} catch (IOException e) {
