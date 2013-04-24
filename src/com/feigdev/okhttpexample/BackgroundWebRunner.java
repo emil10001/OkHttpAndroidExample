@@ -48,6 +48,8 @@ public class BackgroundWebRunner extends AsyncTask<Void, Void, String> {
 			
 			response = buf.toString();
 			Log.d(TAG,"response: " + response);
+			response = connection.getResponseMessage();
+			Log.d(TAG,"response message: " + response);
 		} catch (MalformedURLException e) {
 			Log.e(TAG,"",e);
 		} catch (IOException e) {

@@ -1,7 +1,5 @@
 ## OkHttp Android Example
 
-Currently not functional. It seems to be connecting, but I need to handle the output properly. Fix coming soon!
-
 This is a simple example of implementing [Square's OkHttp library](https://github.com/square/okhttp) in an Android app
 
 ### OkHttp
