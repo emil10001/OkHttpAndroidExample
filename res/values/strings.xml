@@ -3,6 +3,6 @@
 
     <string name="app_name">OkHttpExample</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">hello world!</string>
 
 </resources>

@@ -56,6 +56,8 @@ public class BackgroundWebRunner extends AsyncTask<Void, Void, String> {
 		} catch (IOException e) {
 			Log.e(TAG,"",e);
 		}
+		
+		Log.d(TAG,"response: " + response);
 
 		return response;
 	}
@@ -64,6 +66,8 @@ public class BackgroundWebRunner extends AsyncTask<Void, Void, String> {
 	protected void onPostExecute(String result) {
 		BusProvider.getInstance().register(this);
 		BusProvider.getInstance().post(result);
+		Log.d(TAG,"response: " + result);
+
 		BusProvider.getInstance().unregister(this);
 	}
 }
